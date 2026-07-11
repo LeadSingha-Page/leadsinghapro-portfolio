@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LeadsinghaPro — Web Design & Digital Marketing, Chennai</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#12182B; --navy-deep:#0A0E1C; --cream:#F6F3EC; --amber:#E0A458;
+    --amber-soft:#EDBD7E; --charcoal:#22242C; --grey:#8A8A90; --line:rgba(18,24,43,0.1);
+    --line-dark:rgba(246,243,236,0.14);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--cream);color:var(--charcoal);font-family:'Inter',sans-serif;line-height:1.65;overflow-x:hidden;}
+  h1,h2,h3{font-family:'Space Grotesk',sans-serif;font-weight:600;}
+  a{color:inherit;text-decoration:none;}
+  img{display:block;max-width:100%;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity 0.8s ease, transform 0.8s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+
+  header{position:fixed;top:0;left:0;right:0;z-index:100;transition:background 0.35s ease;}
+  header.scrolled{background:rgba(10,14,28,0.95);backdrop-filter:blur(8px);}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:22px 32px;max-width:1180px;margin:0 auto;}
+  .logo{font-family:'Space Grotesk',sans-serif;font-size:1.35rem;color:var(--cream);}
+  .logo span{color:var(--amber);}
+  .nav-links{display:flex;align-items:center;gap:30px;font-size:0.86rem;color:var(--cream);}
+  .nav-links a{opacity:0.82;}
+  .nav-links a:hover{opacity:1;}
+  .nav-cta{border:1px solid var(--amber);padding:9px 20px;color:var(--amber) !important;opacity:1 !important;border-radius:2px;}
+  .nav-cta:hover{background:var(--amber);color:var(--navy-deep) !important;}
+  @media (max-width:860px){ .nav-links{display:none;} }
+
+  /* HERO */
+  .hero{position:relative;min-height:92svh;display:flex;align-items:center;background:var(--navy-deep);overflow:hidden;}
+  .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 20%, rgba(224,164,88,0.14), transparent 45%),radial-gradient(ellipse at 80% 80%, rgba(224,164,88,0.08), transparent 50%);}
+  .hero-inner{position:relative;z-index:2;padding:150px 32px 80px;max-width:1180px;margin:0 auto;width:100%;}
+  .eyebrow{font-size:0.78rem;letter-spacing:0.24em;text-transform:uppercase;color:var(--amber);margin-bottom:20px;font-weight:500;}
+  .hero h1{color:var(--cream);font-size:clamp(2.4rem,5.6vw,4.4rem);line-height:1.12;max-width:820px;}
+  .hero h1 span{color:var(--amber);}
+  .hero p.sub{max-width:520px;margin:26px 0 0;color:#b8bcc8;font-size:1.05rem;}
+  .hero-cta{margin-top:40px;display:flex;gap:16px;flex-wrap:wrap;}
+  .btn{padding:14px 30px;font-size:0.85rem;letter-spacing:0.02em;display:inline-block;transition:all 0.3s ease;border-radius:2px;font-weight:500;}
+  .btn-primary{background:var(--amber);color:var(--navy-deep);}
+  .btn-primary:hover{background:var(--amber-soft);}
+  .btn-outline{border:1px solid rgba(246,243,236,0.35);color:var(--cream);}
+  .btn-outline:hover{border-color:var(--cream);background:rgba(246,243,236,0.06);}
+
+  .stats{background:var(--navy-deep);border-top:1px solid var(--line-dark);padding:48px 0;}
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);text-align:center;}
+  .stats-grid>div{border-right:1px solid var(--line-dark);}
+  .stats-grid>div:last-child{border-right:none;}
+  .stat-num{font-family:'Space Grotesk',sans-serif;font-size:2.1rem;color:var(--amber);}
+  .stat-label{font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;color:#9aa0b0;margin-top:6px;}
+
+  section{padding:100px 0;}
+  .section-head{margin-bottom:52px;max-width:640px;}
+  .section-head .eyebrow{color:var(--amber-soft);filter:brightness(0.7);}
+  .section-head h2{font-size:clamp(2rem,4vw,2.8rem);}
+  .section-head.center{margin:0 auto 52px;text-align:center;}
+  .section-head.dark .eyebrow{color:var(--amber);}
+  .section-head.dark h2{color:var(--cream);}
+
+  /* ABOUT */
+  .about-grid{display:grid;grid-template-columns:0.8fr 1.2fr;gap:64px;align-items:center;}
+  .about-visual{aspect-ratio:4/5;overflow:hidden;border-radius:4px;}
+  .about-visual img{width:100%;height:100%;object-fit:cover;}
+  .about-grid p{color:var(--grey);margin-bottom:16px;max-width:520px;}
+  .about-grid em{color:var(--navy);font-style:normal;font-weight:600;}
+  .about-badges{display:flex;gap:28px;margin-top:30px;flex-wrap:wrap;}
+  .badge-item{border-left:2px solid var(--amber);padding-left:14px;}
+  .badge-item strong{display:block;font-family:'Space Grotesk',sans-serif;font-size:1.4rem;color:var(--navy);}
+  .badge-item span{font-size:0.76rem;color:var(--grey);letter-spacing:0.02em;}
+  @media (max-width:800px){ .about-grid{grid-template-columns:1fr;gap:32px;} .about-visual{max-width:320px;} }
+
+  /* SERVICES */
+  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);}
+  .svc-card{background:var(--cream);padding:38px 30px;}
+  .svc-num{font-family:'Space Grotesk',sans-serif;color:var(--amber);font-weight:700;}
+  .svc-card h3{font-size:1.25rem;margin:16px 0 10px;}
+  .svc-card p{color:var(--grey);font-size:0.9rem;}
+
+  /* PORTFOLIO GRID */
+  .portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .port-card{background:#fff;border:1px solid var(--line);overflow:hidden;transition:transform 0.3s ease, box-shadow 0.3s ease;}
+  .port-card:hover{transform:translateY(-4px);box-shadow:0 16px 32px rgba(18,24,43,0.1);}
+  .port-thumb{aspect-ratio:16/10;position:relative;overflow:hidden;}
+  .port-thumb .placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-size:1.3rem;color:#fff;}
+  .port-info{padding:22px 24px;}
+  .port-tag{font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--amber);margin-bottom:8px;font-weight:600;}
+  .port-info h3{font-size:1.2rem;margin-bottom:8px;}
+  .port-info p{color:var(--grey);font-size:0.86rem;margin-bottom:14px;}
+  .port-link{font-size:0.82rem;color:var(--navy);border-bottom:1px solid var(--amber);padding-bottom:1px;}
+  @media (max-width:900px){ .portfolio-grid{grid-template-columns:repeat(2,1fr);} .services-grid{grid-template-columns:1fr;} .stats-grid{grid-template-columns:repeat(2,1fr);} .stats-grid>div{border-bottom:1px solid var(--line-dark);padding-bottom:16px;} }
+  @media (max-width:640px){ .portfolio-grid{grid-template-columns:1fr;} }
+
+  /* PROCESS */
+  .process-row{display:flex;gap:24px;overflow-x:auto;padding-bottom:16px;}
+  .process-step{flex:0 0 240px;padding:28px 24px;background:var(--navy-deep);color:var(--cream);}
+  .process-step .step-num{font-family:'Space Grotesk',sans-serif;color:var(--amber);font-size:1.5rem;}
+  .process-step h3{font-size:1.1rem;margin:14px 0 8px;}
+  .process-step p{color:#b8bcc8;font-size:0.85rem;}
+
+  /* SKILLS */
+  .skills-wrap{display:flex;flex-wrap:wrap;gap:12px;}
+  .skill-tag{padding:10px 20px;border:1px solid var(--line);font-size:0.86rem;border-radius:2px;}
+
+  .cta-band{background:var(--navy-deep);color:var(--cream);text-align:center;position:relative;overflow:hidden;}
+  .cta-band-bg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=1600&auto=format&fit=crop');background-size:cover;background-position:center;opacity:0.16;}
+  .cta-band::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 20%, rgba(224,164,88,0.14), transparent 55%);z-index:1;}
+  .cta-band h2{position:relative;z-index:2;font-size:clamp(2rem,4.5vw,3.2rem);max-width:700px;margin:0 auto;color:var(--cream);}
+  .cta-band p{position:relative;z-index:2;color:#b8bcc8;max-width:460px;margin:18px auto 34px;}
+  .cta-band .hero-cta{justify-content:center;position:relative;z-index:2;}
+
+  footer{background:var(--navy-deep);color:#8b91a3;padding:44px 32px 28px;text-align:center;font-size:0.82rem;border-top:1px solid var(--line-dark);}
+  footer .logo{color:var(--cream);font-size:1.1rem;margin-bottom:10px;}
+  footer .social{display:flex;gap:18px;justify-content:center;margin-top:16px;}
+  footer .social a{opacity:0.8;}
+  footer .social a:hover{opacity:1;color:var(--amber);}
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;} *{transition:none !important;} .reveal{opacity:1;transform:none;}
+  }
+</style>
+</head>
+<body>
+
+<header id="siteHeader">
+  <nav>
+    <div class="logo">Leadsingha<span>Pro</span></div>
+    <div class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#contact" class="nav-cta">Let's Talk</a>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Chennai · Web Design &amp; Digital Marketing</div>
+    <h1>Websites that make<br>small businesses look<br><span>impossible to ignore.</span></h1>
+    <p class="sub">I design and build premium, conversion-focused websites for wedding vendors, clinics, salons, gyms, and local businesses across Chennai — plus the SEO and marketing to actually get them found.</p>
+    <div class="hero-cta">
+      <a href="#work" class="btn btn-primary">See My Work</a>
+      <a href="#contact" class="btn btn-outline">Get a Quote</a>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="wrap stats-grid">
+    <div><div class="stat-num">5+</div><div class="stat-label">Projects Designed</div></div>
+    <div><div class="stat-num">4+</div><div class="stat-label">Years in Marketing</div></div>
+    <div><div class="stat-num">100%</div><div class="stat-label">Mobile Responsive</div></div>
+    <div><div class="stat-num">24hr</div><div class="stat-label">Typical Response Time</div></div>
+  </div>
+</div>
+
+<section id="about" style="background:#fff;">
+  <div class="wrap about-grid">
+    <div class="about-visual reveal">
+      <img src="singha.png" alt="Singha - Founder, LeadsinghaPro">
+    </div>
+    <div class="reveal">
+      <div class="eyebrow">Who's Behind This</div>
+      <h2 style="font-size:clamp(1.9rem,3.8vw,2.6rem);margin-bottom:20px;">Hi, I'm Singha.</h2>
+      <p>I'm a performance marketer turned web designer, based in Chennai — currently Senior Digital Marketer at Dwaraka Palace by day, and building LeadsinghaPro on the side to help small businesses across Tamil Nadu get a genuinely premium web presence.</p>
+      <p>4+ years across SEO, Google &amp; Meta Ads, Instagram growth, and Google Business optimization — now paired with hands-on website design, so you get the site <em>and</em> the strategy to actually get people to it.</p>
+      <div class="about-badges">
+        <div class="badge-item"><strong>4+</strong><span>Years in Performance Marketing</span></div>
+        <div class="badge-item"><strong>5+</strong><span>Premium Sites Designed</span></div>
+        <div class="badge-item"><strong>Chennai</strong><span>Based, Tamil Nadu Focused</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-head center">
+      <div class="eyebrow reveal">What I Do</div>
+      <h2 class="reveal">Design, build, and grow — end to end</h2>
+    </div>
+  </div>
+  <div class="services-grid">
+    <div class="svc-card reveal">
+      <div class="svc-num">01</div>
+      <h3>Website Design &amp; Development</h3>
+      <p>Custom, mobile-responsive websites built around your business — not a generic template.</p>
+    </div>
+    <div class="svc-card reveal">
+      <div class="svc-num">02</div>
+      <h3>Local SEO &amp; Google Business</h3>
+      <p>Get found on Google Maps and search — GMB optimization, reviews strategy, and local keywords.</p>
+    </div>
+    <div class="svc-card reveal">
+      <div class="svc-num">03</div>
+      <h3>Instagram &amp; Social Growth</h3>
+      <p>Content strategy, posting calendars, and growth tactics tailored to your industry.</p>
+    </div>
+    <div class="svc-card reveal">
+      <div class="svc-num">04</div>
+      <h3>Google &amp; Meta Ads</h3>
+      <p>Performance-driven ad campaigns that bring in leads, not just impressions.</p>
+    </div>
+    <div class="svc-card reveal">
+      <div class="svc-num">05</div>
+      <h3>Booking &amp; Payment Integration</h3>
+      <p>Calendar scheduling, UPI payment collection, and automated confirmation emails.</p>
+    </div>
+    <div class="svc-card reveal">
+      <div class="svc-num">06</div>
+      <h3>Ongoing Digital Support</h3>
+      <p>Website updates, content refreshes, and monthly performance check-ins.</p>
+    </div>
+  </div>
+</section>
+
+<section id="work" style="background:#fff;">
+  <div class="wrap">
+    <div class="section-head center">
+      <div class="eyebrow reveal">Portfolio</div>
+      <h2 class="reveal">Recent Design Work</h2>
+    </div>
+    <div class="portfolio-grid">
+      <div class="port-card reveal">
+        <div class="port-thumb" style="background:linear-gradient(150deg,#1C1815,#3a2a1c);"><div class="placeholder">Kanmani Story</div></div>
+        <div class="port-info">
+          <div class="port-tag">Wedding Photography</div>
+          <h3>Kanmani Story</h3>
+          <p>A cinematic one-page site for a premium wedding photography studio.</p>
+          <a href="https://leadsingha-page.github.io/kanmani-story-demo/" class="port-link" target="_blank">View Live Site →</a>
+        </div>
+      </div>
+      <div class="port-card reveal">
+        <div class="port-thumb" style="background:linear-gradient(150deg,#212B1B,#33422A);"><div class="placeholder">Sattva Table</div></div>
+        <div class="port-info">
+          <div class="port-tag">Wedding Catering</div>
+          <h3>Sattva Table</h3>
+          <p>A menu-driven site for a satvik wedding caterer with a ritual-based timeline.</p>
+          <a href="https://leadsingha-page.github.io/sattva-table-demo/" class="port-link" target="_blank">View Live Site →</a>
+        </div>
+      </div>
+      <div class="port-card reveal">
+        <div class="port-thumb" style="background:linear-gradient(150deg,#14302C,#1F4A43);"><div class="placeholder">Muktha Dental</div></div>
+        <div class="port-info">
+          <div class="port-tag">5-Page Dental Clinic</div>
+          <h3>Muktha Dental Studio</h3>
+          <p>A full 5-page clinic site with services, doctor profiles, and appointment booking.</p>
+          <a href="https://leadsingha-page.github.io/muktha-dental-demo/" class="port-link" target="_blank">View Live Site →</a>
+        </div>
+      </div>
+      <div class="port-card reveal">
+        <div class="port-thumb" style="background:linear-gradient(150deg,#5C2E39,#8B4B5C);"><div class="placeholder">Alaya Salon</div></div>
+        <div class="port-info">
+          <div class="port-tag">Salon &amp; Spa</div>
+          <h3>Alaya — Salon &amp; Spa</h3>
+          <p>A premium salon site with tabbed service menus and a full treatment gallery.</p>
+          <a href="https://leadsingha-page.github.io/alaya-salon-demo/" class="port-link" target="_blank">View Live Site →</a>
+        </div>
+      </div>
+      <div class="port-card reveal">
+        <div class="port-thumb" style="background:linear-gradient(150deg,#0A0A0A,#1E1E1E);"><div class="placeholder" style="color:#D4FF3F;">VX Fitness</div></div>
+        <div class="port-info">
+          <div class="port-tag">Gen Z Fitness Studio</div>
+          <h3>VX</h3>
+          <p>A bold, high-energy gym site with a 3-slide hero and full membership pricing.</p>
+          <a href="https://leadsingha-page.github.io/vx-fitness-demo/" class="port-link" target="_blank">View Live Site →</a>
+        </div>
+      </div>
+      <div class="port-card reveal">
+        <div class="port-thumb" style="background:linear-gradient(150deg,var(--navy-deep),var(--navy));"><div class="placeholder" style="color:var(--amber);">Your Business?</div></div>
+        <div class="port-info">
+          <div class="port-tag">Coming Soon</div>
+          <h3>Your Website, Here</h3>
+          <p>Have a business that needs a premium web presence? Let's build it together.</p>
+          <a href="#contact" class="port-link">Get in Touch →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="process" style="background:var(--navy-deep);">
+  <div class="wrap">
+    <div class="section-head dark reveal">
+      <div class="eyebrow">How I Work</div>
+      <h2>From first call to launch</h2>
+    </div>
+    <div class="process-row">
+      <div class="process-step reveal"><div class="step-num">01</div><h3>Discovery Call</h3><p>Understand your business, goals, and what a website needs to actually do for you.</p></div>
+      <div class="process-step reveal"><div class="step-num">02</div><h3>Design Concept</h3><p>A custom visual direction built around your brand — not a recycled template.</p></div>
+      <div class="process-step reveal"><div class="step-num">03</div><h3>Build &amp; Review</h3><p>Full site built, shared for your feedback, revised until it's right.</p></div>
+      <div class="process-step reveal"><div class="step-num">04</div><h3>Launch</h3><p>Deployed live on your domain, tested across devices, ready for customers.</p></div>
+      <div class="process-step reveal"><div class="step-num">05</div><h3>Grow</h3><p>Ongoing SEO, social, and ad support to keep bringing customers in.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head center">
+      <div class="eyebrow reveal">Skills &amp; Tools</div>
+      <h2 class="reveal">What I bring to the table</h2>
+    </div>
+    <div class="skills-wrap reveal">
+      <div class="skill-tag">HTML / CSS / JavaScript</div>
+      <div class="skill-tag">Local SEO &amp; GMB</div>
+      <div class="skill-tag">Google Ads</div>
+      <div class="skill-tag">Meta Ads</div>
+      <div class="skill-tag">Instagram Growth</div>
+      <div class="skill-tag">Google Analytics</div>
+      <div class="skill-tag">EmailJS &amp; Automation</div>
+      <div class="skill-tag">Netlify / GitHub Pages</div>
+      <div class="skill-tag">UPI Payment Integration</div>
+      <div class="skill-tag">Calendar Booking Systems</div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="cta-band">
+  <div class="cta-band-bg"></div>
+  <div class="wrap">
+    <div class="eyebrow" style="color:var(--amber);">Let's Build Something</div>
+    <h2>Ready for a website<br>that actually converts?</h2>
+    <p>Tell me about your business and what you're looking for — I'll get back to you within 24 hours.</p>
+    <div class="hero-cta">
+      <a href="https://wa.me/910000000000" class="btn btn-primary">WhatsApp Me</a>
+      <a href="mailto:hello@leadsinghapro.com" class="btn btn-outline">Email Instead</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="logo">Leadsingha<span style="color:#E0A458;">Pro</span></div>
+  <p>Chennai, Tamil Nadu · Web Design &amp; Digital Marketing</p>
+  <div class="social">
+    <a href="https://instagram.com/leadsingha_pro" target="_blank">Instagram</a>
+    <a href="https://github.com/LeadSingha-Page" target="_blank">GitHub</a>
+    <a href="mailto:hello@leadsinghapro.com">Email</a>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting) e.target.classList.add('in');});}, {threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', ()=>{
+    if(window.scrollY > 60) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
+  });
+</script>
+
+</body>
+</html>
