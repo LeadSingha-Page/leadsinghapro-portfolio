@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LeadsinghaPro — Web Design & Digital Marketing, Chennai</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --navy:#12182B; --navy-deep:#0A0E1C; --cream:#F6F3EC; --amber:#E0A458;
@@ -14,8 +14,8 @@
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
-  body{background:var(--cream);color:var(--charcoal);font-family:'Inter',sans-serif;line-height:1.65;overflow-x:hidden;}
-  h1,h2,h3{font-family:'Space Grotesk',sans-serif;font-weight:600;}
+  body{background:var(--cream);color:var(--charcoal);font-family:'Manrope',sans-serif;line-height:1.65;overflow-x:hidden;}
+  h1,h2,h3{font-family:'Playfair Display',serif;font-weight:600;}
   a{color:inherit;text-decoration:none;}
   img{display:block;max-width:100%;}
   .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
@@ -25,7 +25,7 @@
   header{position:fixed;top:0;left:0;right:0;z-index:100;transition:background 0.35s ease;}
   header.scrolled{background:rgba(10,14,28,0.95);backdrop-filter:blur(8px);}
   nav{display:flex;align-items:center;justify-content:space-between;padding:22px 32px;max-width:1180px;margin:0 auto;}
-  .logo{font-family:'Space Grotesk',sans-serif;font-size:1.35rem;color:var(--cream);}
+  .logo{font-family:'Playfair Display',serif;font-size:1.35rem;color:var(--cream);}
   .logo span{color:var(--amber);}
   .nav-links{display:flex;align-items:center;gap:30px;font-size:0.86rem;color:var(--cream);}
   .nav-links a{opacity:0.82;}
@@ -53,7 +53,7 @@
   .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);text-align:center;}
   .stats-grid>div{border-right:1px solid var(--line-dark);}
   .stats-grid>div:last-child{border-right:none;}
-  .stat-num{font-family:'Space Grotesk',sans-serif;font-size:2.1rem;color:var(--amber);}
+  .stat-num{font-family:'Playfair Display',serif;font-size:2.1rem;color:var(--amber);}
   .stat-label{font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;color:#9aa0b0;margin-top:6px;}
 
   section{padding:100px 0;}
@@ -72,14 +72,14 @@
   .about-grid em{color:var(--navy);font-style:normal;font-weight:600;}
   .about-badges{display:flex;gap:28px;margin-top:30px;flex-wrap:wrap;}
   .badge-item{border-left:2px solid var(--amber);padding-left:14px;}
-  .badge-item strong{display:block;font-family:'Space Grotesk',sans-serif;font-size:1.4rem;color:var(--navy);}
+  .badge-item strong{display:block;font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--navy);}
   .badge-item span{font-size:0.76rem;color:var(--grey);letter-spacing:0.02em;}
   @media (max-width:800px){ .about-grid{grid-template-columns:1fr;gap:32px;} .about-visual{max-width:320px;} }
 
   /* SERVICES */
   .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);}
   .svc-card{background:var(--cream);padding:38px 30px;}
-  .svc-num{font-family:'Space Grotesk',sans-serif;color:var(--amber);font-weight:700;}
+  .svc-num{font-family:'Playfair Display',serif;color:var(--amber);font-weight:700;}
   .svc-card h3{font-size:1.25rem;margin:16px 0 10px;}
   .svc-card p{color:var(--grey);font-size:0.9rem;}
 
@@ -88,7 +88,7 @@
   .port-card{background:#fff;border:1px solid var(--line);overflow:hidden;transition:transform 0.3s ease, box-shadow 0.3s ease;}
   .port-card:hover{transform:translateY(-4px);box-shadow:0 16px 32px rgba(18,24,43,0.1);}
   .port-thumb{aspect-ratio:16/10;position:relative;overflow:hidden;}
-  .port-thumb .placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-size:1.3rem;color:#fff;}
+  .port-thumb .placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1.3rem;color:#fff;}
   .port-info{padding:22px 24px;}
   .port-tag{font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--amber);margin-bottom:8px;font-weight:600;}
   .port-info h3{font-size:1.2rem;margin-bottom:8px;}
@@ -100,9 +100,20 @@
   /* PROCESS */
   .process-row{display:flex;gap:24px;overflow-x:auto;padding-bottom:16px;}
   .process-step{flex:0 0 240px;padding:28px 24px;background:var(--navy-deep);color:var(--cream);}
-  .process-step .step-num{font-family:'Space Grotesk',sans-serif;color:var(--amber);font-size:1.5rem;}
+  .process-step .step-num{font-family:'Playfair Display',serif;color:var(--amber);font-size:1.5rem;}
   .process-step h3{font-size:1.1rem;margin:14px 0 8px;}
   .process-step p{color:#b8bcc8;font-size:0.85rem;}
+
+  /* TESTIMONIAL MARQUEE */
+  .review-marquee-wrap{overflow:hidden;padding:64px 0;background:var(--navy-deep);border-top:1px solid var(--line-dark);border-bottom:1px solid var(--line-dark);}
+  .review-track{display:flex;gap:24px;animation:marquee-scroll 34s linear infinite;width:max-content;}
+  .review-marquee-wrap:hover .review-track{animation-play-state:paused;}
+  .review-card{flex:0 0 320px;background:rgba(246,243,236,0.05);border:1px solid var(--line-dark);padding:26px 24px;}
+  .review-card .stars{color:var(--amber);font-size:0.85rem;margin-bottom:12px;letter-spacing:2px;}
+  .review-card p.quote{color:#d3d6e0;font-size:0.9rem;margin-bottom:14px;}
+  .review-card .who{font-size:0.8rem;color:var(--amber-soft);}
+  @keyframes marquee-scroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+  @media (prefers-reduced-motion: reduce){ .review-track{animation:none;} }
 
   /* SKILLS */
   .skills-wrap{display:flex;flex-wrap:wrap;gap:12px;}
@@ -130,7 +141,7 @@
 
 <header id="siteHeader">
   <nav>
-    <div class="logo">Leadsingha<span>Pro</span></div>
+    <div class="logo">Singhavel <span>Kothandan</span></div>
     <div class="nav-links">
       <a href="#work">Work</a>
       <a href="#services">Services</a>
@@ -164,16 +175,16 @@
 <section id="about" style="background:#fff;">
   <div class="wrap about-grid">
     <div class="about-visual reveal">
-      <img src="singha.png" alt="Singha - Founder, LeadsinghaPro">
+      <img src="singha.png" alt="Singhavel Kothandan - Founder, LeadsinghaPro">
     </div>
     <div class="reveal">
       <div class="eyebrow">Who's Behind This</div>
-      <h2 style="font-size:clamp(1.9rem,3.8vw,2.6rem);margin-bottom:20px;">Hi, I'm Singha.</h2>
+      <h2 style="font-size:clamp(1.9rem,3.8vw,2.6rem);margin-bottom:20px;">Hi, I'm Singhavel Kothandan.</h2>
       <p>I'm a performance marketer turned web designer, based in Chennai — currently Senior Digital Marketer at Dwaraka Palace by day, and building LeadsinghaPro on the side to help small businesses across Tamil Nadu get a genuinely premium web presence.</p>
       <p>4+ years across SEO, Google &amp; Meta Ads, Instagram growth, and Google Business optimization — now paired with hands-on website design, so you get the site <em>and</em> the strategy to actually get people to it.</p>
       <div class="about-badges">
         <div class="badge-item"><strong>4+</strong><span>Years in Performance Marketing</span></div>
-        <div class="badge-item"><strong>5+</strong><span>Premium Sites Designed</span></div>
+        <div class="badge-item"><strong>50+</strong><span>Premium Sites Designed</span></div>
         <div class="badge-item"><strong>Chennai</strong><span>Based, Tamil Nadu Focused</span></div>
       </div>
     </div>
@@ -225,7 +236,7 @@
   <div class="wrap">
     <div class="section-head center">
       <div class="eyebrow reveal">Portfolio</div>
-      <h2 class="reveal">Recent Design Work</h2>
+      <h2 class="reveal">Recent Design Work Samples</h2>
     </div>
     <div class="portfolio-grid">
       <div class="port-card reveal">
@@ -302,6 +313,21 @@
   </div>
 </section>
 
+<div class="review-marquee-wrap">
+  <div class="review-track">
+    <div class="review-card"><div class="stars">★★★★★</div><p class="quote">I am Mr. Murugan, owner of Saravana Cars. I got my Google Business Profile service done through Singhavel from Lead Singha — he handled the complete setup very professionally, and my business is now visible on Google with customer calls coming in.</p><div class="who">— saravanacars, Google Review</div></div>
+    <div class="review-card"><div class="stars">★★★★★</div><p class="quote">We signed up with Leadsingha for a complete digital marketing service — SEO, Google Ads, website redesign, and social media. Within 90 days, our site traffic increased by 85%, and we started ranking for competitive keywords.</p><div class="who">— Sathesh Kumar, Google Review</div></div>
+    <div class="review-card"><div class="stars">★★★★★</div><p class="quote">We wanted a modern website for our new business. Leadsingha built a fast, mobile-friendly site and set up our Meta Ads the same week. The results were amazing. Great team.</p><div class="who">— Pavendan G, Google Review</div></div>
+    <div class="review-card"><div class="stars">★★★★★</div><p class="quote">I can't believe this is my website. Leadsingha created an absolutely stunning single-page design that actually gets people to fill out the contact form. My conversion rate shot up right away — a total business upgrade, 10/10.</p><div class="who">— Satheesh U, Google Review</div></div>
+    <div class="review-card"><div class="stars">★★★★★</div><p class="quote">We chose Leadsingha for paid campaigns, and their approach to lead generation was exceptional. The ROI we've seen from their targeted ads has exceeded our projections — strategic, data-driven, and focused on measurable sales results.</p><div class="who">— Antony Rosario V., Google Review</div></div>
+    <div class="review-card"><div class="stars">★★★★★</div><p class="quote">As a first-time startup owner, I was clueless about digital marketing. Singhavel and his team guided me on everything — website, branding, and social media. Now we're getting steady inquiries daily.</p><div class="who">— Kalpana Semnagiri, Google Review</div></div>
+    <div class="review-card"><div class="stars">★★★★★</div><p class="quote">I am Mr. Murugan, owner of Saravana Cars. I got my Google Business Profile service done through Singhavel from Lead Singha — he handled the complete setup very professionally, and my business is now visible on Google with customer calls coming in.</p><div class="who">— saravanacars, Google Review</div></div>
+    <div class="review-card"><div class="stars">★★★★★</div><p class="quote">We signed up with Leadsingha for a complete digital marketing service — SEO, Google Ads, website redesign, and social media. Within 90 days, our site traffic increased by 85%, and we started ranking for competitive keywords.</p><div class="who">— Sathesh Kumar, Google Review</div></div>
+    <div class="review-card"><div class="stars">★★★★★</div><p class="quote">We wanted a modern website for our new business. Leadsingha built a fast, mobile-friendly site and set up our Meta Ads the same week. The results were amazing. Great team.</p><div class="who">— Pavendan G, Google Review</div></div>
+    <div class="review-card"><div class="stars">★★★★★</div><p class="quote">I can't believe this is my website. Leadsingha created an absolutely stunning single-page design that actually gets people to fill out the contact form. My conversion rate shot up right away — a total business upgrade, 10/10.</p><div class="who">— Satheesh U, Google Review</div></div>
+  </div>
+</div>
+
 <section>
   <div class="wrap">
     <div class="section-head center">
@@ -337,7 +363,7 @@
 </section>
 
 <footer>
-  <div class="logo">Leadsingha<span style="color:#E0A458;">Pro</span></div>
+  <div class="logo">Singhavel <span style="color:#E0A458;">Kothandan</span></div>
   <p>Chennai, Tamil Nadu · Web Design &amp; Digital Marketing</p>
   <div class="social">
     <a href="https://instagram.com/leadsingha_pro" target="_blank">Instagram</a>
