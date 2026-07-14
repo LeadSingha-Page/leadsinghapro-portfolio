@@ -38,7 +38,15 @@
   .hero{position:relative;min-height:92svh;display:flex;align-items:center;background:var(--navy-deep);overflow:hidden;}
   .hero-bg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1686061592689-312bbfb5c055?q=80&w=1800&auto=format&fit=crop');background-size:cover;background-position:center;opacity:0.22;}
   .hero::before{content:'';position:absolute;inset:0;background:linear-gradient(100deg, rgba(10,14,28,0.9) 40%, rgba(10,14,28,0.7) 100%),radial-gradient(ellipse at 20% 20%, rgba(224,164,88,0.14), transparent 45%);}
-  .hero-inner{position:relative;z-index:2;padding:150px 32px 80px;max-width:1180px;margin:0 auto;width:100%;}
+  .hero-inner{position:relative;z-index:2;padding:150px 32px 80px;max-width:1180px;margin:0 auto;width:100%;display:grid;grid-template-columns:1.15fr 0.85fr;gap:48px;align-items:center;}
+  .hero-photo{position:relative;justify-self:center;}
+  .hero-photo img{width:100%;max-width:340px;aspect-ratio:4/5;object-fit:cover;border:3px solid rgba(224,164,88,0.4);border-radius:4px;}
+  .hero-photo::before{content:'';position:absolute;top:18px;left:18px;right:-18px;bottom:-18px;border:1px solid var(--amber);z-index:-1;border-radius:4px;}
+  @media (max-width:900px){
+    .hero-inner{grid-template-columns:1fr;}
+    .hero-photo{order:-1;margin-bottom:10px;}
+    .hero-photo img{max-width:220px;}
+  }
   .eyebrow{font-size:1.05rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--amber);margin-bottom:20px;font-weight:700;}
   .hero h1{color:var(--cream);font-size:clamp(2.6rem,6vw,4.8rem);line-height:1.1;max-width:850px;font-weight:800;}
   .hero h1 span{color:var(--amber);}
@@ -173,19 +181,24 @@
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-inner">
-    <div class="eyebrow">Chennai · Web Design &amp; Digital Marketing</div>
-    <h1>Websites that make<br>small businesses look<br><span>impossible to ignore.</span></h1>
-    <p class="sub">I design and build premium, conversion-focused websites for wedding vendors, clinics, salons, gyms, and local businesses across Chennai — plus the SEO and marketing to actually get them found.</p>
-    <div class="hero-cta">
-      <a href="#work" class="btn btn-primary">See My Work</a>
-      <a href="#contact" class="btn btn-outline">Get a Quote</a>
+    <div>
+      <div class="eyebrow">Chennai · Web Design &amp; Digital Marketing</div>
+      <h1>Websites that make<br>small businesses look<br><span>impossible to ignore.</span></h1>
+      <p class="sub">I design and build premium, conversion-focused websites for wedding vendors, clinics, salons, gyms, and local businesses across Chennai — plus the SEO and marketing to actually get them found.</p>
+      <div class="hero-cta">
+        <a href="#work" class="btn btn-primary">See My Work</a>
+        <a href="#contact" class="btn btn-outline">Get a Quote</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="singha.png" alt="Singhavel Kothandan">
     </div>
   </div>
 </section>
 
 <div class="stats">
   <div class="wrap stats-grid">
-    <div><div class="stat-num">5+</div><div class="stat-label">Projects Designed</div></div>
+    <div><div class="stat-num">50+</div><div class="stat-label">Projects Designed</div></div>
     <div><div class="stat-num">4+</div><div class="stat-label">Years in Marketing</div></div>
     <div><div class="stat-num">100%</div><div class="stat-label">Mobile Responsive</div></div>
     <div><div class="stat-num">24hr</div><div class="stat-label">Typical Response Time</div></div>
