@@ -87,7 +87,9 @@
   .portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
   .port-card{background:#fff;border:1px solid var(--line);overflow:hidden;transition:transform 0.3s ease, box-shadow 0.3s ease;}
   .port-card:hover{transform:translateY(-4px);box-shadow:0 16px 32px rgba(18,24,43,0.1);}
-  .port-thumb{aspect-ratio:16/10;position:relative;overflow:hidden;}
+  .port-thumb{aspect-ratio:16/10;position:relative;overflow:hidden;background:var(--navy-deep);}
+  .port-thumb img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform 0.4s ease;}
+  .port-card:hover .port-thumb img{transform:scale(1.05);}
   .port-thumb .placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1.3rem;color:#fff;}
   .port-info{padding:22px 24px;}
   .port-tag{font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--amber);margin-bottom:8px;font-weight:600;}
@@ -240,7 +242,7 @@
     </div>
     <div class="portfolio-grid">
       <div class="port-card reveal">
-        <div class="port-thumb" style="background:linear-gradient(150deg,#1C1815,#3a2a1c);"><div class="placeholder">Kanmani Story</div></div>
+        <div class="port-thumb"><img src="thumb-kanmani.png" alt="Kanmani Story website preview"></div>
         <div class="port-info">
           <div class="port-tag">Wedding Photography</div>
           <h3>Kanmani Story</h3>
@@ -249,7 +251,7 @@
         </div>
       </div>
       <div class="port-card reveal">
-        <div class="port-thumb" style="background:linear-gradient(150deg,#212B1B,#33422A);"><div class="placeholder">Sattva Table</div></div>
+        <div class="port-thumb"><img src="thumb-sattva.png" alt="Sattva Table website preview"></div>
         <div class="port-info">
           <div class="port-tag">Wedding Catering</div>
           <h3>Sattva Table</h3>
@@ -258,7 +260,7 @@
         </div>
       </div>
       <div class="port-card reveal">
-        <div class="port-thumb" style="background:linear-gradient(150deg,#14302C,#1F4A43);"><div class="placeholder">Muktha Dental</div></div>
+        <div class="port-thumb"><img src="thumb-muktha.png" alt="Muktha Dental Studio website preview"></div>
         <div class="port-info">
           <div class="port-tag">5-Page Dental Clinic</div>
           <h3>Muktha Dental Studio</h3>
@@ -267,7 +269,7 @@
         </div>
       </div>
       <div class="port-card reveal">
-        <div class="port-thumb" style="background:linear-gradient(150deg,#5C2E39,#8B4B5C);"><div class="placeholder">Alaya Salon</div></div>
+        <div class="port-thumb"><img src="thumb-alaya.png" alt="Alaya Salon and Spa website preview"></div>
         <div class="port-info">
           <div class="port-tag">Salon &amp; Spa</div>
           <h3>Alaya — Salon &amp; Spa</h3>
@@ -276,7 +278,7 @@
         </div>
       </div>
       <div class="port-card reveal">
-        <div class="port-thumb" style="background:linear-gradient(150deg,#0A0A0A,#1E1E1E);"><div class="placeholder" style="color:#D4FF3F;">VX Fitness</div></div>
+        <div class="port-thumb"><img src="thumb-vx.png" alt="VX Fitness website preview"></div>
         <div class="port-info">
           <div class="port-tag">Gen Z Fitness Studio</div>
           <h3>VX</h3>
